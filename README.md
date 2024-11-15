@@ -1,5 +1,4 @@
-# Task Management App
-### Live Link: https://taskmanager-dusky-delta.vercel.app/
+# Task Management App:  [Live Link](https://taskmanager-dusky-delta.vercel.app/)
 A simple **Task Management** application built with **Next.js** to manage tasks with priority, deadlines, and completion status. This app allows users to add, edit, delete, mark tasks as completed, and filter them based on search and priority. It uses **localStorage** to persist tasks data across page reloads.
 
 ## Features
@@ -104,3 +103,9 @@ Before you begin, ensure you have the following installed:
 ### Thank You! 😊
 
 Thank you for exploring and contributing to the **Task Management App**!
+
+
+---
+
+# [Answer to Technical Questions](https://github.com/Manas-Pathak/taskmanager/blob/main/Answers%20to%20technical%20questions.md)
+
