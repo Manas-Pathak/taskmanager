@@ -4,31 +4,40 @@ import Head from "next/head";
 import "../app/globals.css"; // Import your global styles
 
 export default function TaskScheduler() {
-    // State initialization from localStorage
-    const [tasks, setTasks] = useState(() => {
-        const storedTasks = localStorage.getItem("tasks");
-        return storedTasks ? JSON.parse(storedTasks) : [];
-    });
+    const [tasks, setTasks] = useState([]);
+    const [completedTasks, setCompletedTasks] = useState([]);
 
-    const [completedTasks, setCompletedTasks] = useState(() => {
+    // Initialize tasks from localStorage when the component mounts (client-side only)
+    useEffect(() => {
+        const storedTasks = localStorage.getItem("tasks");
         const storedCompletedTasks = localStorage.getItem("completedTasks");
-        return storedCompletedTasks ? JSON.parse(storedCompletedTasks) : [];
-    });
+
+        if (storedTasks) {
+            setTasks(JSON.parse(storedTasks));
+        }
+        if (storedCompletedTasks) {
+            setCompletedTasks(JSON.parse(storedCompletedTasks));
+        }
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+    // Save tasks and completed tasks to localStorage whenever they change
+    useEffect(() => {
+        if (tasks.length > 0) {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+    }, [tasks]); // Sync tasks with localStorage
+
+    useEffect(() => {
+        if (completedTasks.length > 0) {
+            localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+        }
+    }, [completedTasks]); // Sync completed tasks with localStorage
 
     const [taskName, setTaskName] = useState("");
     const [taskPriority, setTaskPriority] = useState("Top");
     const [taskDeadline, setTaskDeadline] = useState("");
     const [searchKeyword, setSearchKeyword] = useState("");
     const [filterPriority, setFilterPriority] = useState("");
-
-    // Save tasks and completed tasks to localStorage whenever they change
-    useEffect(() => {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-    }, [tasks]);
-
-    useEffect(() => {
-        localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
-    }, [completedTasks]);
 
     const handleTaskNameChange = (e) => {
         setTaskName(e.target.value);
