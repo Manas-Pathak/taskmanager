@@ -1,26 +1,30 @@
 # Task Management App
 
-A simple task management application built with **Next.js** to manage tasks with priority, deadlines, and completion status. The app supports CRUD operations (Create, Read, Update, Delete) for tasks and persists data across page reloads using **localStorage**.
+A simple **Task Management** application built with **Next.js** to manage tasks with priority, deadlines, and completion status. This app allows users to add, edit, delete, mark tasks as completed, and filter them based on search and priority. It uses **localStorage** to persist tasks data across page reloads.
 
 ## Features
-- **Add a task** with task name, priority, and deadline.
-- **Edit and delete tasks**.
-- **Mark tasks as completed**.
-- **Filter tasks** by priority and search by task name.
-- **Persistent data**: Tasks and completed tasks are saved to `localStorage` so data remains intact even after a page refresh.
+
+- **Add Tasks**: Users can add tasks with a name, priority, and deadline.
+- **Edit Tasks**: Users can edit existing tasks.
+- **Delete Tasks**: Users can delete tasks from the list.
+- **Mark Tasks as Completed**: Users can mark tasks as done and move them to the completed list.
+- **Search and Filter**: Users can search for tasks by name and filter by priority.
+- **Persistent Data**: Tasks and completed tasks are saved in `localStorage`, so data persists even after a page refresh.
 
 ## Technologies Used
-- **React**: For building the user interface and managing component state.
-- **Next.js**: For server-side rendering and routing.
-- **CSS Modules**: For scoped styling.
 
-## Setup and Installation
+- **Next.js**: Framework for React-based applications.
+- **React**: For building the user interface and managing component state.
+- **CSS Modules**: Scoped CSS styling for individual components.
+- **localStorage**: For saving task data persistently across page reloads.
+  
+## Installation & Setup
 
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
-- **Node.js**: Version 14.x or higher
-- **npm** or **yarn**: For managing dependencies
+- **Node.js** (v14.x or higher)
+- **npm** (node package manager) or **yarn** (alternative package manager)
 
 ### Clone the Repository
 
